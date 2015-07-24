@@ -11,7 +11,8 @@
 #include <conio.h>
 #include <ctime>
 using namespace std;
-int file_massive(){
+int file_massive()
+{
     srand(time(NULL));
     int a[10][2],i,j;
     FILE *f = fopen("p.txt", "wt");
@@ -29,7 +30,8 @@ int file_massive(){
     }
     fclose(f);
 }
-int main(){
+int main()
+{
     file_massive();
     int a,b;
     int ba[10][10],q,j;
@@ -38,9 +40,11 @@ int main(){
     std::vector<int> v2;
     fstream F;
     F.open("p.txt");
-    if (F){
+    if (F)
+    {
         printf("file is found.\n");
-        while (!F.eof()){
+        while (!F.eof())
+        {
             F>>a;
             v1.push_back(a);
         }
@@ -48,12 +52,16 @@ int main(){
         int vector1_size = v1.size();
         vector1_size=vector1_size-1;
         printf("massiv points:\n");
-        for (int i = 0; i < vector1_size; i=i+2) {
+        for (int i = 0; i < vector1_size; i=i+2) 
+        {
             srand(time(NULL));
             FILE *dfile=fopen("pictures.pnm","w");
-                        for (q = 0; q <10 ; q++){
-                            for ( j = 0; j < 10; j++){
-                                if(v1[i]!=q && v1[i+1]!=j) {
+                        for (q = 0; q <10 ; q++)
+                        {
+                            for ( j = 0; j < 10; j++)
+                            {
+                                if(v1[i]!=q && v1[i+1]!=j) 
+                                {
                                     ba[q][j]=0;
                                 }
                                 else ba[q][j]=1;
@@ -67,8 +75,10 @@ int main(){
         printf("radius.\n");
         scanf("%d",&b);
         printf("receiv massiv points:\n");
-        for(int i = 0; i < vector1_size; i=i+2){
-            if(pow((pow(v1[i],2)+pow(v1[i+1],2)),0.5)<=b){
+        for(int i = 0; i < vector1_size; i=i+2)
+        {
+            if(pow((pow(v1[i],2)+pow(v1[i+1],2)),0.5)<=b)
+            {
                 v2.push_back(v1[i]);
                 v2.push_back(v1[i+1]);
                 printf("    x=%d  y=%d\n",v1[i],v1[i+1]);
