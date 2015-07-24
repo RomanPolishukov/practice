@@ -16,8 +16,10 @@ int file_massive(){
     int a[10][2],i,j;
     FILE *f = fopen("p.txt", "wt");
     FILE *dfile=fopen("pictures.pnm","w");
-    for (i = 0; i < 10; i++){
-        for ( j = 0; j < 2; j++){
+    for (i = 0; i < 10; i++)
+    {
+        for ( j = 0; j < 2; j++)
+        {
             a[i][j] = rand() % 11;
             printf(" %d", a[i][j]);
             fprintf(f, " %d", a[i][j]);
