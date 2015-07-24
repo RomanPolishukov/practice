@@ -10,12 +10,15 @@
 #include <vector>
 #include <conio.h>
 using namespace std;
-int file_massive(){
+int file_massive()
+{
     srand(time(NULL));
     int a[10][2],i,j;
     FILE *f = fopen("p.txt", "wt");
-    for (i = 0; i < 10; i++){
-        for ( j = 0; j < 2; j++){
+    for (i = 0; i < 10; i++)
+    {
+        for ( j = 0; j < 2; j++)
+        {
             a[i][j] = rand() % 10;
             printf(" %d", a[i][j]);
             fprintf(f, " %d", a[i][j]);
@@ -25,7 +28,8 @@ int file_massive(){
     }
     fclose(f);
 }
-int main(){
+int main()
+{
     file_massive();
     int a,b;
 
@@ -35,9 +39,11 @@ int main(){
 
 	fstream F;
 	F.open("p.txt");
-	if (F){
+	if (F)
+	{
 		printf("file found.\n");
-		while (!F.eof()){
+		while (!F.eof())
+		{
 			F>>a;
             		v1.push_back(a);
 		}
@@ -45,14 +51,17 @@ int main(){
 		int vector1_size = v1.size();
         	vector1_size=vector1_size-1;
 		printf("massiv points:\n");
-        	for (int i = 0; i < vector1_size; i=i+2) {
+        	for (int i = 0; i < vector1_size; i=i+2)
+        	{
 			printf("    x=%d  y=%d\n",v1[i],v1[i+1]);
 		}
 		printf("radius.\n");
 		scanf("%d",&b);
 		printf("receiv massiv points:\n");
-		for(int i = 0; i < vector1_size; i=i+2){
-			if(pow((pow(v1[i],2)+pow(v1[i+1],2)),0.5)<=b){
+		for(int i = 0; i < vector1_size; i=i+2)
+		{
+			if(pow((pow(v1[i],2)+pow(v1[i+1],2)),0.5)<=b)
+			{
 				v2.push_back(v1[i]);
 				v2.push_back(v1[i+1]);
 				printf("    x=%d  y=%d\n",v1[i],v1[i+1]);
